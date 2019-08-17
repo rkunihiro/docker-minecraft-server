@@ -2,8 +2,14 @@
 /.vs
 /.vscode
 
-/world
 /logs
+/plugins
+/spigot*
+/world*
+/*.yml
 
-usercache.json
 server.jar
+spigot-server.jar
+
+ops.json
+usercache.json
