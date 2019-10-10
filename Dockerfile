@@ -10,4 +10,11 @@ RUN mkdir /tmp/mcrcon \
  && tar xvzf /tmp/mcrcon/mcrcon.tar.gz -C /tmp/mcrcon \
  && mv /tmp/mcrcon/mcrcon /usr/local/bin
 
+# Install spigot
+RUN mkdir /usr/local/spigot && cd /usr/local/spigot \
+ && wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar \
+ && java -Xms1G -Xmx1G -jar BuildTools.jar --rev 1.14.4
+
 WORKDIR /usr/local/Minecraft_Server
+
+CMD ["java", "-Xms1G", "-Xmx1G", "-jar", "/usr/local/spigot/spigot-1.14.4.jar", "nogui"]
