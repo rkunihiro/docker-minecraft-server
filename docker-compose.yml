@@ -6,9 +6,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - 'VERSION=1.15'
     volumes:
       - '.:/usr/local/Minecraft_Server'
-    # working_dir: /usr/local/Minecraft_Server
     ports:
       - '25565:25565'
       - '25575:25575'
