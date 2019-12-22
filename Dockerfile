@@ -1,7 +1,5 @@
 FROM openjdk:8-jre-stretch
 
-ARG VERSION
-
 # Install dependencies
 RUN apt-get update -y \
  && apt-get install git -y
@@ -12,13 +10,11 @@ RUN mkdir /tmp/mcrcon \
  && tar xvzf /tmp/mcrcon/mcrcon.tar.gz -C /tmp/mcrcon \
  && mv /tmp/mcrcon/mcrcon /usr/local/bin
 
-# Install spigot
-RUN mkdir /usr/local/spigot && cd /usr/local/spigot \
- && wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar \
- && java -Xms1G -Xmx1G -jar BuildTools.jar --rev ${VERSION}
-
-RUN mv /usr/local/spigot/spigot-${VERSION}.jar /usr/local/spigot/spigot.jar
+# Download peper
+RUN mkdir /usr/local/paper \
+ && wget -O /usr/local/paper/paper.jar https://papermc.io/api/v1/paper/1.15.1/26/download \
+ && ls -lha /usr/local/paper
 
 WORKDIR /usr/local/Minecraft_Server
 
-CMD ["java", "-Xms1G", "-Xmx1G", "-jar", "/usr/local/spigot/spigot.jar", "nogui"]
+CMD ["java", "-Xms1G", "-Xmx1G", "-jar", "/usr/local/paper/paper.jar", "nogui"]
