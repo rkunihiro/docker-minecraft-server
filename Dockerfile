@@ -1,5 +1,8 @@
 FROM openjdk:8-jre-stretch
 
+ARG VERSION
+ARG BUILD
+
 # Install dependencies
 RUN apt-get update -y \
  && apt-get install git -y
@@ -12,7 +15,7 @@ RUN mkdir /tmp/mcrcon \
 
 # Download peper
 RUN mkdir /usr/local/paper \
- && wget -O /usr/local/paper/paper.jar https://papermc.io/api/v1/paper/1.15.1/26/download \
+ && wget -O /usr/local/paper/paper.jar https://papermc.io/api/v1/paper/$VERSION/$BUILD/download \
  && ls -lha /usr/local/paper
 
 WORKDIR /usr/local/Minecraft_Server
