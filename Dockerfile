@@ -9,9 +9,10 @@ RUN apt-get update -y \
 
 # Install mcrcon
 RUN mkdir /tmp/mcrcon \
- && wget -O  /tmp/mcrcon/mcrcon.tar.gz https://github.com/Tiiffi/mcrcon/releases/download/v0.0.5/mcrcon-0.0.5-linux-x86-64.tar.gz \
+ && wget -O  /tmp/mcrcon/mcrcon.tar.gz https://github.com/Tiiffi/mcrcon/releases/download/v0.7.1/mcrcon-0.7.1-linux-x86-64.tar.gz \
  && tar xvzf /tmp/mcrcon/mcrcon.tar.gz -C /tmp/mcrcon \
- && mv /tmp/mcrcon/mcrcon /usr/local/bin
+ && ls /tmp/mcrcon/mcrcon-0.7.1-linux-x86-64 \
+ && mv /tmp/mcrcon/mcrcon-0.7.1-linux-x86-64/mcrcon /usr/local/bin
 
 # Download peper
 RUN mkdir /usr/local/paper \
