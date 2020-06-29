@@ -7,8 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        VERSION: 1.15.2
-        BUILD: 350
+        VERSION: 1.16.1
+        BUILD: 21
     volumes:
       - '.:/usr/local/Minecraft_Server'
     ports:
