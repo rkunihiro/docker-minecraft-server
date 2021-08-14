@@ -5,7 +5,7 @@ ARG BUILD
 
 # Install dependencies
 RUN apt-get update -y \
-    && apt-get install git -y
+    && apt-get install git wget -y
 
 # Install mcrcon
 RUN mkdir /tmp/mcrcon \
