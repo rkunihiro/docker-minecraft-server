@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-stretch
+FROM openjdk:17-jdk-slim
 
 ARG VERSION
 ARG BUILD
