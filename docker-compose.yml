@@ -3,12 +3,13 @@ version: '3.7'
 services:
   minecraft:
     container_name: 'minecraft-server'
+    image: 'rkunihiro/docker-minecraft-server:latest'
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        VERSION: 1.17.1
-        BUILD: 398
+        VERSION: 1.18
+        BUILD: 66
         MCRCON: 0.7.2
     volumes:
       - '.:/usr/local/Minecraft_Server'
