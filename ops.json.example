@@ -1,0 +1,8 @@
+[
+    {
+        "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "name": "xxxxxx",
+        "level": 4,
+        "bypassesPlayerLimit": false
+    }
+]

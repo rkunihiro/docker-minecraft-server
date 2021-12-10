@@ -2,22 +2,23 @@ FROM openjdk:17-jdk-slim
 
 ARG VERSION
 ARG BUILD
+ARG MCRCON
 
 # Install dependencies
 RUN apt-get update -y \
-    && apt-get install git wget -y
+ && apt-get install git wget -y
 
 # Install mcrcon
 RUN mkdir /tmp/mcrcon \
-    && wget -O  /tmp/mcrcon/mcrcon.tar.gz https://github.com/Tiiffi/mcrcon/releases/download/v0.7.1/mcrcon-0.7.1-linux-x86-64.tar.gz \
-    && tar xvzf /tmp/mcrcon/mcrcon.tar.gz -C /tmp/mcrcon \
-    && ls /tmp/mcrcon/mcrcon-0.7.1-linux-x86-64 \
-    && mv /tmp/mcrcon/mcrcon-0.7.1-linux-x86-64/mcrcon /usr/local/bin
+ && wget -O  /tmp/mcrcon/mcrcon.tar.gz https://github.com/Tiiffi/mcrcon/releases/download/v${MCRCON}/mcrcon-${MCRCON}-linux-x86-64.tar.gz \
+ && tar xvzf /tmp/mcrcon/mcrcon.tar.gz -C /tmp/mcrcon \
+ && ls -1 /tmp/mcrcon \
+ && mv /tmp/mcrcon/mcrcon /usr/local/bin
 
 # Download peper
 RUN mkdir /usr/local/paper \
-    && wget -O /usr/local/paper/paper.jar https://papermc.io/api/v1/paper/$VERSION/$BUILD/download \
-    && ls -lha /usr/local/paper
+ && wget -O /usr/local/paper/paper.jar https://papermc.io/api/v2/projects/paper/versions/${VERSION}/builds/${BUILD}/downloads/paper-${VERSION}-${BUILD}.jar \
+ && ls -lha /usr/local/paper
 
 WORKDIR /usr/local/Minecraft_Server
 
