@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   minecraft:
@@ -8,8 +8,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        VERSION: 1.18
-        BUILD: 66
+        VERSION: 1.18.1
+        BUILD: 140
         MCRCON: 0.7.2
     volumes:
       - '.:/usr/local/Minecraft_Server'

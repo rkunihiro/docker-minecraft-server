@@ -3,9 +3,11 @@
 /.vscode
 
 /cache
+/libraries
 /logs
 /plugins
 /spigot*
+/versions
 /world*
 /*.yml
 
