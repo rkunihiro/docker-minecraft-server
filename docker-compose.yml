@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
       args:
         VERSION: 1.18.1
-        BUILD: 140
+        BUILD: 175
         MCRCON: 0.7.2
     volumes:
       - '.:/usr/local/Minecraft_Server'
