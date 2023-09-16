@@ -1,15 +1,12 @@
-version: '3.8'
-
 services:
   minecraft:
-    container_name: 'minecraft-server'
-    image: 'rkunihiro/docker-minecraft-server:latest'
+    container_name: minecraft-server
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        VERSION: 1.18.1
-        BUILD: 181
+        VERSION: 1.20.1
+        BUILD: 183
         MCRCON: 0.7.2
     volumes:
       - '.:/usr/local/Minecraft_Server'
