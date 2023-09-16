@@ -3,6 +3,7 @@
 /.vscode
 
 /cache
+/config
 /libraries
 /logs
 /plugins
